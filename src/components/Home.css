@@ -1,0 +1,724 @@
+/* =================================
+   HOME SECTION
+================================= */
+
+.home-section {
+  min-height: 100vh;
+  width: 100%;
+
+  background: #f5f8ff;
+  color: #111827;
+
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+  padding: 120px 8% 80px;
+}
+
+
+/* =================================
+   BACKGROUND GRID
+================================= */
+
+.grid-background {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(37,99,235,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37,99,235,0.04) 1px, transparent 1px);
+
+  background-size: 60px 60px;
+
+  mask-image: linear-gradient(to bottom, black, transparent);
+
+  pointer-events: none;
+}
+
+
+/* =================================
+   GLOW EFFECTS
+================================= */
+
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+.glow-one {
+  width: 400px;
+  height: 400px;
+
+  background: rgba(147,51,234,0.12);
+
+  top: 10%;
+  left: -10%;
+}
+
+.glow-two {
+  width: 350px;
+  height: 350px;
+
+  background: rgba(79,70,229,0.12);
+
+  right: 5%;
+  bottom: 5%;
+}
+
+
+/* =================================
+   MAIN CONTAINER
+================================= */
+
+.home-container {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+
+  align-items: center;
+  gap: 60px;
+
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =================================
+   LEFT CONTENT
+================================= */
+
+.home-content {
+  animation: fadeUp 1s ease forwards;
+}
+
+.available-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 18px;
+
+  border: 1px solid #bbf7d0;
+  border-radius: 30px;
+
+  background: #f0fdf4;
+
+  color: #15803d;
+
+  font-size: 13px;
+  margin-bottom: 35px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+  box-shadow: 0 0 12px #22c55e;
+
+  display: inline-block;
+
+  animation: pulse 1.5s infinite;
+}
+
+.hello-text {
+  color: #2563eb;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  letter-spacing: 5px;
+  margin-bottom: 15px;
+}
+
+.home-content h1 {
+  font-size: clamp(42px, 5.5vw, 75px);
+
+  line-height: 1.1;
+  font-weight: 800;
+
+  letter-spacing: -3px;
+  margin-bottom: 20px;
+
+  color: #111827;
+}
+
+.home-content h1 span {
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #9333ea,
+    #2563eb
+  );
+
+  background-size: 200% auto;
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: gradientMove 4s linear infinite;
+}
+
+.home-content h2 {
+  font-size: clamp(22px, 3vw, 32px);
+
+  color: #334155;
+  font-weight: 500;
+
+  margin-bottom: 25px;
+}
+
+.typing-cursor {
+  color: #2563eb;
+  animation: blink 1s infinite;
+}
+
+.home-description {
+  max-width: 570px;
+
+  color: #64748b;
+
+  font-size: 16px;
+  line-height: 1.9;
+
+  margin-bottom: 35px;
+}
+
+
+/* =================================
+   BUTTONS
+================================= */
+
+.home-buttons {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 15px 25px;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.primary-btn {
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed
+  );
+
+  color: white;
+
+  box-shadow: 0 5px 25px rgba(37,99,235,0.2);
+}
+
+.primary-btn:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 10px 35px rgba(37,99,235,0.3);
+}
+
+.secondary-btn {
+  border: 1px solid #cbd5e1;
+
+  color: #334155;
+
+  background: white;
+}
+
+.secondary-btn:hover {
+  border-color: #2563eb;
+
+  color: #2563eb;
+
+  transform: translateY(-5px);
+}
+
+
+/* =================================
+   SOCIAL LINKS
+================================= */
+
+.social-links {
+  display: flex;
+  gap: 15px;
+
+  margin-top: 35px;
+}
+
+.social-links a {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+
+  color: #475569;
+
+  background: white;
+
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: white;
+
+  background: #2563eb;
+  border-color: #2563eb;
+
+  transform: translateY(-5px);
+}
+
+
+/* =================================
+   RIGHT VISUAL
+================================= */
+
+.home-visual {
+  min-height: 480px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  perspective: 1000px;
+}
+
+
+/* =================================
+   PROFILE CODE CARD
+================================= */
+
+.profile-card {
+  width: 100%;
+  max-width: 420px;
+
+  background: rgba(255,255,255,0.95);
+
+  border: 1px solid #dbeafe;
+
+  border-radius: 18px;
+
+  backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 0 50px rgba(37,99,235,0.10),
+    0 15px 40px rgba(79,70,229,0.08);
+
+  position: relative;
+  z-index: 2;
+
+  animation: floatCard 5s ease-in-out infinite;
+
+  transition: transform 0.4s ease;
+}
+
+.profile-card:hover {
+  transform: rotateY(-5deg) rotateX(5deg);
+}
+
+
+/* CARD TOP */
+
+.profile-card-top {
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 0 20px;
+
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.profile-card-top span {
+  width: 11px;
+  height: 11px;
+
+  border-radius: 50%;
+}
+
+.profile-card-top span:nth-child(1) {
+  background: #fb7185;
+}
+
+.profile-card-top span:nth-child(2) {
+  background: #fbbf24;
+}
+
+.profile-card-top span:nth-child(3) {
+  background: #4ade80;
+}
+
+
+/* CODE CONTENT */
+
+.code-content {
+  padding: 30px 25px;
+
+  font-family: "Courier New", monospace;
+
+  font-size: 14px;
+  line-height: 2.2;
+
+  color: #64748b;
+}
+
+.code-content p {
+  margin: 0;
+}
+
+.code-purple {
+  color: #9333ea;
+  font-weight: bold;
+}
+
+.code-content p span {
+  color: #059669;
+}
+
+.code-status {
+  margin-top: 20px;
+
+  padding-top: 15px;
+
+  border-top: 1px solid #e2e8f0;
+
+  color: #64748b;
+
+  font-size: 11px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+/* =================================
+   FLOATING TECH CARDS
+================================= */
+
+.floating-tech {
+  position: absolute;
+  z-index: 3;
+
+  padding: 13px 20px;
+
+  background: white;
+
+  border: 1px solid #dbeafe;
+
+  border-radius: 12px;
+
+  color: #334155;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  backdrop-filter: blur(15px);
+
+  box-shadow: 0 10px 30px rgba(37,99,235,0.12);
+}
+
+.tech-react {
+  top: 5%;
+  right: 5%;
+
+  animation: floatTech 4s infinite ease-in-out;
+}
+
+.tech-node {
+  bottom: 15%;
+  left: -5%;
+
+  animation: floatTech 5s infinite ease-in-out;
+}
+
+.tech-js {
+  top: 30%;
+  left: -10%;
+
+  animation: floatTech 4.5s infinite ease-in-out;
+}
+
+.tech-db {
+  bottom: 5%;
+  right: 5%;
+
+  animation: floatTech 5.5s infinite ease-in-out;
+}
+
+
+/* =================================
+   ORBIT RINGS
+================================= */
+
+.orbit {
+  position: absolute;
+
+  border: 1px solid rgba(99,102,241,0.18);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.orbit-one {
+  width: 520px;
+  height: 520px;
+
+  animation: rotateOrbit 20s linear infinite;
+}
+
+.orbit-two {
+  width: 620px;
+  height: 620px;
+
+  border-color: rgba(147,51,234,0.12);
+
+  animation: rotateOrbit 30s linear infinite reverse;
+}
+
+
+/* =================================
+   SCROLL INDICATOR
+================================= */
+
+.scroll-indicator {
+  position: absolute;
+
+  bottom: 25px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+.scroll-indicator span {
+  width: 20px;
+  height: 30px;
+
+  border: 1px solid #2563eb;
+
+  border-radius: 15px;
+
+  position: relative;
+}
+
+.scroll-indicator span::after {
+  content: "";
+
+  width: 3px;
+  height: 7px;
+
+  background: #2563eb;
+
+  position: absolute;
+
+  top: 5px;
+  left: 7px;
+
+  border-radius: 5px;
+
+  animation: scrollDown 1.5s infinite;
+}
+
+
+/* =================================
+   ANIMATIONS
+================================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatCard {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes floatTech {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes gradientMove {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes rotateOrbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes scrollDown {
+  to {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 1000px) {
+
+  .home-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .home-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home-buttons,
+  .social-links {
+    justify-content: center;
+  }
+
+  .home-visual {
+    min-height: 550px;
+  }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .home-section {
+    padding: 110px 6% 80px;
+  }
+
+  .home-content h1 {
+    font-size: 43px;
+    letter-spacing: -2px;
+  }
+
+  .home-content h2 {
+    font-size: 22px;
+  }
+
+  .home-description {
+    font-size: 14px;
+  }
+
+  .home-visual {
+    min-height: 400px;
+  }
+
+  .profile-card {
+    max-width: 340px;
+  }
+
+  .code-content {
+    padding: 20px 15px;
+    font-size: 11px;
+  }
+
+  .floating-tech {
+    padding: 9px 12px;
+    font-size: 10px;
+  }
+
+  .orbit-one {
+    width: 350px;
+    height: 350px;
+  }
+
+  .orbit-two {
+    width: 400px;
+    height: 400px;
+  }
+
+  .tech-js {
+    left: 0;
+  }
+
+  .tech-node {
+    left: 0;
+  }
+
+}
